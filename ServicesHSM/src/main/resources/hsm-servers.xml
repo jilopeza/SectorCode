@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ApiHSMConfig xmlns:tns="http://www.example.org/hsm-servers"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/hsm-servers hsm-servers.xsd">
+
+	<General>
+		<deployment>
+			<hilos>0</hilos>
+			<llamadas>0</llamadas>
+		</deployment>
+		<pool>
+			<name>name</name>
+			<min>0</min>
+			<max>0</max>
+			<interval>0</interval>
+			<validate>true</validate>
+			<containment>true</containment>
+			<timeDestroyConnect>0</timeDestroyConnect>
+			<timeout>0</timeout>
+			<connectTimeout>0</connectTimeout>
+		</pool>
+	</General>
+	<Servers>
+		<hsmServer>
+			<id>100</id>
+			<classModelName>com.novatronic.components.hsm.thales.HSMThales</classModelName>
+			<modelName>HSM THALES 9000</modelName>
+			<classRequestName>com.novatronic.components.hsm.thales.HSMThalesCommand9000</classRequestName>
+			<classResponseName>com.novatronic.components.hsm.thales.HSMThalesResponse9000</classResponseName>
+			<idLMK>0</idLMK>
+			<lenHeader>4</lenHeader>
+			<ip>172.29.43.164</ip>
+			<port>1500</port>
+			<connectionType>FAST_CONNECT</connectionType>
+			<timeout>30</timeout>
+			<intervalEcho>60</intervalEcho>
+			<retriesNumber>3</retriesNumber>
+			<balanceType>BALANCE_AUTO</balanceType>
+			<percentWork>100</percentWork>
+			<environmentType>ENV_PRODUCTION</environmentType>
+			<version>9000</version>
+		</hsmServer>
+
+		<hsmServer>
+			<id>200</id>
+			<classModelName>com.novatronic.components.hsm.thales.HSMThales</classModelName>
+			<modelName>HSM THALES 9000</modelName>
+			<classRequestName>com.novatronic.components.hsm.thales.HSMThalesCommand9000</classRequestName>
+			<classResponseName>com.novatronic.components.hsm.thales.HSMThalesResponse9000</classResponseName>
+			<idLMK>0</idLMK>
+			<lenHeader>4</lenHeader>
+			<ip>172.29.43.164</ip>
+			<port>1500</port>
+			<connectionType>FAST_CONNECT</connectionType>
+			<timeout>30</timeout>
+			<intervalEcho>60</intervalEcho>
+			<retriesNumber>3</retriesNumber>
+			<balanceType>BALANCE_AUTO</balanceType>
+			<percentWork>100</percentWork>
+			<environmentType>ENV_PRODUCTION</environmentType>
+			<version>9000</version>
+		</hsmServer>
+
+		<hsmServer>
+			<id>300</id>
+			<classModelName>com.novatronic.components.hsm.thales.HSMThales</classModelName>
+			<modelName>HSM THALES 9000</modelName>
+			<classRequestName>com.novatronic.components.hsm.thales.HSMThalesCommand9000</classRequestName>
+			<classResponseName>com.novatronic.components.hsm.thales.HSMThalesResponse9000</classResponseName>
+			<idLMK>0</idLMK>
+			<lenHeader>4</lenHeader>
+			<ip>172.29.43.164</ip>
+			<port>1500</port>
+			<connectionType>FAST_CONNECT</connectionType>
+			<timeout>30</timeout>
+			<intervalEcho>60</intervalEcho>
+			<retriesNumber>3</retriesNumber>
+			<balanceType>BALANCE_AUTO</balanceType>
+			<percentWork>100</percentWork>
+			<environmentType>ENV_PRODUCTION</environmentType>
+			<version>9000</version>
+		</hsmServer>
+	</Servers>
+</tns:ApiHSMConfig>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{HH:mm:ss,SSS} [%-10t] %-5p (%c) %m - [linea:%L]%n" />
+		</layout>
+	</appender>
+
+	<appender name="NOVALOG" class="com.novatronic.appender.NovaAppender">
+		<param name="Type" value="EVAFL"/>
+		<param name="File" value="D:/Temp/HSMServices/log/HSMServices.log"/>
+		<param name="MaxFileNameLength" value="6"/>
+		<param name="DatePattern" value="yyyyMMdd"/>
+		<param name="Threshold" value="TRACE"/>
+		<param name="MaxFileSize" value="10MB"/>
+		<param name="MaxRollFileCount" value="20" />
+		<param name="ScavengeInterval" value="60000" />
+		<param name="DateRollEnforced" value="true"/>
+		<param name="BufferedIO" value="false" />
+		<param name="CompressionAlgorithm" value="GZ" />
+		<param name="ScavengeInterval" value="500"/>
+		<rollingPolicy class="com.novatronic.scavenger.DateLogFileScavenger">
+			<param name="DateType" value="MONTH"/>
+			<param name="MaxRollFileCount" value="2"/>
+		</rollingPolicy>
+		<layout class="com.novatronic.layout.NovaLayout">
+			<param name="ConversionPattern" value="E 01 %N{1} %d{NOVA}       ServicesHSM %10.10P %10t %12.12e{1} %32.32I %20c{1} %5.5L %m%n"/>
+		</layout>
+	</appender>
+
+	<root>
+		<priority value="TRACE" />
+		<appender-ref ref="NOVALOG" />
+ 		<!-- appender-ref ref="CONSOLE" /--> 
+	</root>
+</log4j:configuration>

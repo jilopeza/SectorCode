@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/hsm-servers"
+	xmlns:tns="http://www.example.org/hsm-servers" attributeFormDefault="unqualified" elementFormDefault="unqualified">
+
+	<complexType name="ApiHSMConfig">
+		<sequence>
+			<element name="General" type="tns:general"></element>
+			<element name="Servers" type="tns:servers"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="hsmServer">
+		<sequence>
+			<element name="id" type="string"></element>
+			<element name="classModelName" type="string"></element>
+			<element name="modelName" type="string"></element>
+			<element name="classRequestName" type="string"></element>
+			<element name="classResponseName" type="string"></element>
+			<element name="idLMK" type="int"></element>
+			<element name="lenHeader" type="int"></element>
+			<element name="ip" type="string"></element>
+			<element name="port" type="int"></element>
+			<element name="connectionType" type="string"></element>
+			<element name="timeout" type="int"></element>
+			<element name="intervalEcho" type="int"></element>
+			<element name="retriesNumber" type="int"></element>
+			<element name="balanceType" type="string"></element>
+			<element name="percentWork" type="int"></element>
+			<element name="environmentType" type="string"></element>
+			<element name="version" type="int"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="servers">
+		<sequence>
+			<element name="hsmServer" type="tns:hsmServer" maxOccurs="unbounded" minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="deployment">
+		<sequence>
+			<element name="hilos" type="int"></element>
+			<element name="llamadas" type="int"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="pool">
+		<sequence>
+			<element name="name" type="string"></element>
+			<element name="min" type="int"></element>
+			<element name="max" type="int"></element>
+			<element name="interval" type="int"></element>
+			<element name="validate" type="boolean"></element>
+			<element name="containment" type="boolean"></element>
+			<element name="timeDestroyConnect" type="int"></element>
+			<element name="timeout" type="int"></element>
+			<element name="connectTimeout" type="int"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="general">
+		<sequence>
+			<element name="deployment" type="tns:deployment"></element>
+			<element name="pool" type="tns:pool"></element>
+		</sequence>
+	</complexType>
+
+	<element name="ApiHSMConfig" type="tns:ApiHSMConfig"></element>
+</schema>
